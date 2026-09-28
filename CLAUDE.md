@@ -105,6 +105,16 @@ docs/                 design-plan, review-queue, launch-checklist, privacy-polic
 
 Calm, hopeful, adult, unmistakably Indian. The Home "air clearing" sky is the one bold element; the SOS breathing circle is the only continuous motion (static count under reduced motion). Tokens and type scale live in `docs/design-plan.md` and `src/ui/tokens.ts`. Tap targets ≥48dp, body ≥16sp, works at 200% font scale, WCAG AA, a label on every control. Copy: plain verbs, sentence case, second person, warm; Hindi is natural spoken Hindi.
 
+## UI rules (from P0.7)
+
+- Use `Text`, `Button`, `Screen` from `src/ui`. Don't use React Native's `Text` directly in screens.
+- Colours come from `useColors()` (tokens in `src/ui/tokens.ts`); never hard-code hex in screens. Adding a text/background pairing? Add it to `src/ui/__tests__/tokens.test.ts` so contrast is checked.
+- Font weight comes from the family (`Mukta-Regular`, `Mukta-SemiBold`); never set `fontWeight` (Android falls back to the system font).
+- `tabular` digits only for ticking timers.
+- `marigold` only for milestones; `sky`/`haze` only in the Home hero.
+- `Button` always announces as a button, including inside `<Link asChild>`.
+- Dev-only check screen: Settings → "Type specimen (dev)" (`app/dev/specimen.tsx`).
+
 ## Out of scope for MVP
 
 Accounts, cloud sync, any backend, chatbot/LLM features, community/forums, ads, CO monitors/wearables, iOS release, B2B.

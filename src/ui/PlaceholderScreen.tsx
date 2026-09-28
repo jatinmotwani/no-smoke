@@ -1,36 +1,35 @@
 import { Link, type Href } from 'expo-router';
-import { StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
+import { Button } from './Button';
+import { Screen } from './Screen';
+import { Text } from './Text';
 
 type Props = {
   title: string;
+  /** The first link can be the screen's main action; the rest are quiet links. */
+  primary?: { href: Href; label: string };
   links?: { href: Href; label: string }[];
   note?: string;
 };
 
 /** Temporary screen body used until each screen is built. Removed by the end of P5. */
-export function PlaceholderScreen({ title, links = [], note }: Props) {
+export function PlaceholderScreen({ title, primary, links = [], note }: Props) {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text accessibilityRole="header" style={styles.title}>
+    <Screen>
+      <Text variant="title" accessibilityRole="header">
         {title}
       </Text>
-      <View style={styles.links}>
-        {links.map((link) => (
-          <Link key={link.label} href={link.href} style={styles.link} accessibilityRole="link">
-            {link.label}
-          </Link>
-        ))}
-      </View>
-      {note ? <Text style={styles.note}>{note}</Text> : null}
-    </SafeAreaView>
+      {primary ? (
+        <Link href={primary.href} asChild>
+          <Button label={primary.label} size="sos" />
+        </Link>
+      ) : null}
+      {links.map((link) => (
+        <Link key={link.label} href={link.href} asChild>
+          <Button label={link.label} variant="quiet" />
+        </Link>
+      ))}
+      {note ? <Text tone="soft">{note}</Text> : null}
+    </Screen>
   );
 }
-
-const styles = StyleSheet.create({
-  container: { flex: 1, padding: 24, gap: 16 },
-  title: { fontSize: 28, fontWeight: '600' },
-  links: { gap: 8 },
-  link: { fontSize: 18, minHeight: 48, paddingVertical: 12, textDecorationLine: 'underline' },
-  note: { fontSize: 16 },
-});

@@ -6,7 +6,7 @@ module.exports = {
       displayName: 'node',
       preset: 'jest-expo/node',
       testMatch: [
-        '<rootDir>/src/{domain,data,i18n}/**/*.test.ts',
+        '<rootDir>/src/{domain,data,i18n,ui}/**/*.test.ts',
         '<rootDir>/scripts/**/*.test.ts',
       ],
     },

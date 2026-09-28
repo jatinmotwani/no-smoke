@@ -33,6 +33,16 @@ const config: ExpoConfig = {
   plugins: [
     'expo-router',
     'expo-status-bar',
+    [
+      'expo-splash-screen',
+      {
+        // chuna (light) and night (dark) from src/ui/tokens.ts; a test keeps them in sync.
+        backgroundColor: '#F3F6F4',
+        dark: { backgroundColor: '#111827' },
+        image: './assets/splash-icon.png',
+        imageWidth: 120,
+      },
+    ],
     // Lets Android 13+ offer the app's languages in system settings (per-app language).
     [
       'expo-localization',

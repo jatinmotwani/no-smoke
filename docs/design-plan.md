@@ -1,6 +1,6 @@
 # Design plan
 
-Status: **draft for owner review** (P0.6). Implemented as `src/ui/tokens.ts` and base components in P0.7 once approved.
+Status: **draft for owner review**. Tokens, type scale and base components are implemented (P0.7: `src/ui/tokens.ts`, `Text`, `Button`, `Screen`); the answers to §10 shape the hero (P2.8), icons (P2) and dark-mode builds (P4.1).
 
 Mock of the revised plan (rendered in Chromium with the real font): [`design/mock-home-sos.png`](design/mock-home-sos.png). Type test: [`design/type-test-mukta-vs-hind.png`](design/type-test-mukta-vs-hind.png).
 
@@ -168,4 +168,4 @@ Before the quit date the hero reads "Quit day in / 3 days", with "₹0 saved so 
 1. **Haze after a slip**: follow total smoke-free days (never re-hazes, my recommendation) or the current streak (literal, but a slip wipes the sky)?
 2. **Skyline**: are a rooftop water tank and a neem tree the right everyday-Indian cue, or would you prefer something else (a chai stall awning, a temple-free city roofline)?
 3. **Icons**: OK to hand-draw ~12 SVG icons rather than add an icon library?
-4. **`expo-system-ui`**: Android builds need it for `userInterfaceStyle: 'automatic'` (dark mode following the phone). Not on the approved list; OK to add in P0.7?
+4. **`expo-system-ui`**: Android builds need it for `userInterfaceStyle: 'automatic'` (dark mode following the phone). Expo Go doesn't, so it isn't needed until the first dev build. Not on the approved list; OK to add in P4.1?

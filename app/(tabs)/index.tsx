@@ -13,8 +13,8 @@ export default function HomeScreen() {
   return (
     <PlaceholderScreen
       title={APP_NAME}
+      primary={{ href: '/sos', label: t('home.sosButton') }}
       links={[
-        { href: '/sos', label: t('home.sosButton') },
         { href: '/slip', label: t('home.slip') },
         { href: '/checkin', label: t('home.checkin') },
         { href: '/settings', label: t('home.settings') },
