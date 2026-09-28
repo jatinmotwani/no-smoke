@@ -44,5 +44,8 @@
     "react-test-renderer": "19.2.3",
     "tsx": "^4.23.15",
     "typescript": "~6.0.3"
+  },
+  "engines": {
+    "node": ">=22.13"
   }
 }

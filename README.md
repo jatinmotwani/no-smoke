@@ -11,7 +11,7 @@ A calm, private, offline-first Android app that helps Indian smokers (cigarettes
 
 ## Setup
 
-Requirements: Node 22 LTS, npm 10+, Android Studio with an emulator (or an Android phone with Expo Go).
+Requirements: Node 22.13+ (see `.nvmrc`), npm 10+, Android Studio with an emulator (or an Android phone with Expo Go).
 
 ```sh
 npm ci
