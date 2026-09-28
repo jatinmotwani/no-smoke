@@ -33,6 +33,8 @@ Rules:
 
 Approved beyond SPEC §4: `expo-linking`, `expo-constants`, `expo-status-bar`, `expo-splash-screen`, `react-native-screens`, `react-native-safe-area-context`, `react-native-worklets`, `expo-image-picker`, `expo-file-system`, `expo-document-picker`, `expo-crypto`, `expo-dev-client`, `tsx`, `eslint-config-expo`, `eslint-config-prettier`. Deliberately not used: zod, date/time picker libraries, better-sqlite3, font packages.
 
+Added to make the approved tools work (no new capabilities): `react-dom` (pinned to React's version; peer of expo-router's web-only modal code, never bundled for Android), `expo-asset` (expo-font imports it), `babel-preset-expo` (Jest needs it at the top level), `react-test-renderer` (peer of the testing library), `@types/node`, `@react-native/jest-preset` (peer of jest-expo).
+
 ## Commands
 
 | Command | What it does |
@@ -114,4 +116,6 @@ Accounts, cloud sync, any backend, chatbot/LLM features, community/forums, ads, 
 - Routes live in root `app/`. Never create `src/app/`: Expo Router would use it instead of `app/`.
 - Tabs come from `expo-router/js-tabs` (the `Tabs` export of `expo-router` is deprecated). Stacks from `expo-router`.
 - Typed routes are on. `npm run typecheck` regenerates `.expo/types` first (`expo customize tsconfig.json`), so CI and local agree.
+- Testing: `@testing-library/react-native` stays on v13 because `expo-router/testing-library` (`renderRouter`) needs v13's synchronous `render`; v14 made it async. Jest stays on 29 (jest-expo 57 is built on it). Jest has two projects: `node` (src/domain, src/data, src/i18n, scripts; `*.test.ts`) and `app` (screens; `*.test.tsx`).
+- TypeScript 6 no longer auto-loads `@types/*`; global types are listed in `tsconfig.json` `types`.
 - App identity (name, slug, scheme, package) lives in `src/app-identity.json`, because Expo's config loader can't follow relative `.ts` imports from `app.config.ts`. Code imports `APP_NAME` from `@/config`.
