@@ -106,3 +106,12 @@ Calm, hopeful, adult, unmistakably Indian. The Home "air clearing" sky is the on
 ## Out of scope for MVP
 
 Accounts, cloud sync, any backend, chatbot/LLM features, community/forums, ads, CO monitors/wearables, iOS release, B2B.
+
+## Expo notes (SDK 57)
+
+- Expo APIs change every SDK. Don't trust memory: read the installed package's `.d.ts`/README, or the docs source at `raw.githubusercontent.com/expo/expo/sdk-57/docs/pages/...` (docs.expo.dev is blocked in the cloud sandbox).
+- Add native packages with `npx expo install <pkg>` so versions match the SDK. In the cloud sandbox api.expo.dev is blocked: prefix with `EXPO_OFFLINE=1` (uses the version map bundled in `expo`).
+- Routes live in root `app/`. Never create `src/app/`: Expo Router would use it instead of `app/`.
+- Tabs come from `expo-router/js-tabs` (the `Tabs` export of `expo-router` is deprecated). Stacks from `expo-router`.
+- Typed routes are on. `npm run typecheck` regenerates `.expo/types` first (`expo customize tsconfig.json`), so CI and local agree.
+- App identity (name, slug, scheme, package) lives in `src/app-identity.json`, because Expo's config loader can't follow relative `.ts` imports from `app.config.ts`. Code imports `APP_NAME` from `@/config`.
