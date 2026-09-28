@@ -1,0 +1,27 @@
+{
+  "tabs": {
+    "home": "होम",
+    "progress": "प्रगति",
+    "learn": "जानें",
+    "help": "मदद लें"
+  },
+  "home": {
+    "sosButton": "तलब लगी है? इसे पार करें",
+    "slip": "मैंने पी ली",
+    "checkin": "आज का हाल",
+    "settings": "सेटिंग्स",
+    "onboarding": "शुरू से शुरू करें",
+    "moneySample": "पैसों की जाँच: {{lakh}} और {{crore}}"
+  },
+  "screens": {
+    "progress": "प्रगति",
+    "learn": "जानें",
+    "help": "मदद लें",
+    "sos": "तलब में मदद",
+    "slip": "मैंने पी ली",
+    "checkin": "आज का हाल",
+    "settings": "सेटिंग्स",
+    "language": "अपनी भाषा चुनें",
+    "goHome": "होम पर जाएँ"
+  }
+}

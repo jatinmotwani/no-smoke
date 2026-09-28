@@ -5,10 +5,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 type Props = {
   title: string;
   links?: { href: Href; label: string }[];
+  note?: string;
 };
 
 /** Temporary screen body used until each screen is built. Removed by the end of P5. */
-export function PlaceholderScreen({ title, links = [] }: Props) {
+export function PlaceholderScreen({ title, links = [], note }: Props) {
   return (
     <SafeAreaView style={styles.container}>
       <Text accessibilityRole="header" style={styles.title}>
@@ -21,6 +22,7 @@ export function PlaceholderScreen({ title, links = [] }: Props) {
           </Link>
         ))}
       </View>
+      {note ? <Text style={styles.note}>{note}</Text> : null}
     </SafeAreaView>
   );
 }
@@ -30,4 +32,5 @@ const styles = StyleSheet.create({
   title: { fontSize: 28, fontWeight: '600' },
   links: { gap: 8 },
   link: { fontSize: 18, minHeight: 48, paddingVertical: 12, textDecorationLine: 'underline' },
+  note: { fontSize: 16 },
 });

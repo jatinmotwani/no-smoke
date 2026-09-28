@@ -1,5 +1,8 @@
+import { useTranslation } from 'react-i18next';
+
 import { PlaceholderScreen } from '@/ui/PlaceholderScreen';
 
 export default function CheckinScreen() {
-  return <PlaceholderScreen title="Daily check-in" />;
+  const { t } = useTranslation();
+  return <PlaceholderScreen title={t('screens.checkin')} />;
 }

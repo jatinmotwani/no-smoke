@@ -1,5 +1,8 @@
+import { useTranslation } from 'react-i18next';
+
 import { PlaceholderScreen } from '@/ui/PlaceholderScreen';
 
 export default function HelpScreen() {
-  return <PlaceholderScreen title="Get help" />;
+  const { t } = useTranslation();
+  return <PlaceholderScreen title={t('screens.help')} />;
 }

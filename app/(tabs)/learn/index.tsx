@@ -1,5 +1,8 @@
+import { useTranslation } from 'react-i18next';
+
 import { PlaceholderScreen } from '@/ui/PlaceholderScreen';
 
 export default function LearnScreen() {
-  return <PlaceholderScreen title="Learn" />;
+  const { t } = useTranslation();
+  return <PlaceholderScreen title={t('screens.learn')} />;
 }

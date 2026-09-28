@@ -1,0 +1,27 @@
+{
+  "tabs": {
+    "home": "Home",
+    "progress": "Progress",
+    "learn": "Learn",
+    "help": "Get help"
+  },
+  "home": {
+    "sosButton": "Craving? Get through it",
+    "slip": "I smoked",
+    "checkin": "Daily check-in",
+    "settings": "Settings",
+    "onboarding": "Start again from the beginning",
+    "moneySample": "Money check: {{lakh}} and {{crore}}"
+  },
+  "screens": {
+    "progress": "Progress",
+    "learn": "Learn",
+    "help": "Get help",
+    "sos": "Craving SOS",
+    "slip": "I smoked",
+    "checkin": "Daily check-in",
+    "settings": "Settings",
+    "language": "Choose your language",
+    "goHome": "Go to Home"
+  }
+}

@@ -30,7 +30,15 @@ const config: ExpoConfig = {
     bundleIdentifier: identity.androidPackage,
     supportsTablet: false,
   },
-  plugins: ['expo-router', 'expo-status-bar'],
+  plugins: [
+    'expo-router',
+    'expo-status-bar',
+    // Lets Android 13+ offer the app's languages in system settings (per-app language).
+    [
+      'expo-localization',
+      { supportedLocales: { android: ['en-IN', 'hi-IN'], ios: ['en-IN', 'hi-IN'] } },
+    ],
+  ],
   experiments: {
     typedRoutes: true,
   },

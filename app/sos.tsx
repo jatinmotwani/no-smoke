@@ -1,5 +1,13 @@
+import { useTranslation } from 'react-i18next';
+
 import { PlaceholderScreen } from '@/ui/PlaceholderScreen';
 
 export default function SosScreen() {
-  return <PlaceholderScreen title="Craving SOS" links={[{ href: '/help', label: 'Get help' }]} />;
+  const { t } = useTranslation();
+  return (
+    <PlaceholderScreen
+      title={t('screens.sos')}
+      links={[{ href: '/help', label: t('screens.help') }]}
+    />
+  );
 }

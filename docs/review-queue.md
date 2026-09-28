@@ -18,6 +18,7 @@ Status: `open` → `answered` → `applied`.
 | RQ-006 | SOS | Breathing pace for the SOS circle (e.g. 4 s in, 6 s out). No registry source covers a specific pace. | Needs a clinician's OK on the pace, and copy that makes no claim about how long cravings last. | Clinician | open |
 | RQ-007 | Scheduler | Default "usual time" per trigger before the user has logged data (e.g. chai = wake + 30 min, after meals = 13:30 and 20:30). Behavioural default, not a health claim. | List to be written in P1.5. | Owner | open |
 | RQ-008 | Onboarding | Asking "Are you using a quit medicine prescribed by a doctor?" so the §3.6 mood-change card can be shown. Hidden for under-18. | Optional field `quitMedicine`, "prefer not to say" allowed. | Clinician | open |
+| RQ-009 | Hindi | Every string in `src/content/hi-IN/*.json` is machine-drafted. Check register (natural spoken Hindi, not bookish) and meaning, e.g. "तलब लगी है? इसे पार करें" for "Craving? Get through it", "आज का हाल" for "Daily check-in". | Per-item `needsHumanReview` tracking arrives with the content schema in P1.8. | Hindi reviewer | open |
 
 ## Proposed sources
 
